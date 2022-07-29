@@ -1,26 +1,41 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import entry from './components/entry';
+import useGoogleSheets from 'use-google-sheets';
+import {sheetCols} from './types/type'
 
-function App() {
+
+const App = () => {
+  const { data, loading, error } = useGoogleSheets({
+    apiKey: process.env.REACT_APP_GOOGLE_API_KEY !,
+    sheetId: process.env.REACT_APP_GOOGLE_SHEETS_ID !,
+  });
+
+  if (loading) {
+    return <div></div>;
+  }
+
+  if (error) {
+    return <div>Error!</div>;
+  }
+  const parsed = JSON.parse(JSON.stringify(data[0]['data']))
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <div className='container'>
+      <h1>Ripsters - Proposte progetti Open-Source</h1>
+      <h4>
+        Se vuoi proporre un tuo progetto compila il{' '}
+        <a href='https://docs.google.com/forms/d/e/1FAIpQLSc3NmWUpO5dX3tztCy-W6bs3eBTX17aNxdhfP9C5PSUjhPx3g/viewform'>
+          form
         </a>
-      </header>
+      </h4>
+      {parsed.map((p: sheetCols) => {
+        return entry(p)
+      })}
     </div>
-  );
-}
+  )
+};
 
 export default App;
