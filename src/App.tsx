@@ -23,17 +23,26 @@ const App = () => {
 
 
   return (
-    <div className='container'>
-      <h1>Ripsters - Proposte progetti Open-Source</h1>
-      <h4>
-        Se vuoi proporre un tuo progetto compila il{' '}
-        <a href='https://docs.google.com/forms/d/e/1FAIpQLSc3NmWUpO5dX3tztCy-W6bs3eBTX17aNxdhfP9C5PSUjhPx3g/viewform'>
-          form
-        </a>
-      </h4>
-      {parsed.map((p: sheetCols) => {
-        return entry(p)
-      })}
+    <div>
+      <div className='container'>
+        <h1>Ripsters - Proposte progetti Open Source</h1>
+        <h4>
+          Se vuoi proporre un tuo progetto compila il{' '}
+          <a href='https://docs.google.com/forms/d/e/1FAIpQLSc3NmWUpO5dX3tztCy-W6bs3eBTX17aNxdhfP9C5PSUjhPx3g/viewform'>
+            form
+          </a>
+        </h4>
+        {parsed.map((p: sheetCols) => {
+          return entry(p)
+        })}
+      </div>
+      <footer className='footer mt-auto py-3 bg-light'>
+        <div className='container'>
+          <span className='text-muted'>
+            <a href='https://github.com/matteasu/rip-oss'>Source code </a>
+          </span>
+        </div>
+      </footer>
     </div>
   )
 };
