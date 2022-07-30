@@ -194,19 +194,6 @@
       "Conosco https://github.com/HFO4/gameboy.live ma è diverso, consiste in un server che raccoglie tutti i comandi, li esegue e restituisce un flusso \"video\" agli utenti, l'esperienza è lontana da quella di un gioco gameboy",
       "Sistemi distribuiti",
       "Go per un ipotetico server, Rust/C++ per i client"
-    ],
-    [
-      "29/07/2022 12.45.07",
-      "ErikP#7324",
-      "https://github.com/ErikPelli",
-      "3",
-      "Voglio diventare maintainer",
-      "Price tracker distribuito",
-      "Un'applicazione web che traccia i prezzi di Amazon sfruttando gli utenti per fare parsing delle pagine dei prodotti che visitano e salvare le informazioni di quel momento in un database (nel lungo termine forse per la mole di dati da gestire ha senso qualcosa come Cassandra, o per cominciare Postgres o se si punta al cloud dovrebbe andare Spanner o BigTable).\nOgni utente ha un'estensione nel browser che si occupa di comunicare i dati al server.\nPer i prodotti meno conosciuti/visitati che un utente richiede di tracciare, il server seleziona alcuni client/estensioni online in quel momento e chiede loro di scaricare la pagina di amazon con le informazioni e di comunicargli il risultato (prezzi, informazioni, ecc.), facendo così diventare i client come dei proxy.\nOltre a un frontend web si può pensare a un'applicazione mobile per interagire col sito (vedere l'andamento storico dei prezzi di un prodotto, tracciare i prezzi di uno specifico prodotto, essere avvisati quando il prezzo scende sotto una certa soglia, ecc.)",
-      "",
-      "keepa.com ma è closed source e a pagamento per la maggior parte delle funzioni",
-      "No",
-      "Microservizi nei linguaggi backend conosciuti da chi vuole contribuire (tra cui Go), Javascript per l'estensione del browser, Flutter per mobile e dashboard (oppure React)"
     ]
   ]
 }
