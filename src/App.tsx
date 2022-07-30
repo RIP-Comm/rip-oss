@@ -86,7 +86,7 @@ const App = () => {
       <footer className="footer mt-auto py-3">
         <div className="container">
           <span className="text-muted">
-            <a href="https://github.com/matteasu/rip-oss">Source code </a>
+            <a href="https://github.com/RIP-Comm/rip-oss">Source code </a>
           </span>
         </div>
       </footer>
