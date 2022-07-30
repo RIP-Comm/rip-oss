@@ -1,16 +1,16 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { sheetCols } from '../types/type';
+import { SheetCols } from '../types/type';
 import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge'
-function entry(e: sheetCols) {
+function entry(e: SheetCols) {
   const re = new RegExp('[https://]*[a-zA-Z]+.com+/')
   const githubBaseURL = 'https://github.com/'
   const githubNick = e['Link account GitHub'].replace(re, '');
   const badgeMaintainer = <Badge>Maintainer</Badge>
   const badgeContributor = <Badge bg="secondary">Contributor</Badge>
   return (
-    <Card className='mt-4  mb-4 mb-md-3'>
+    <Card className='mt-4 mb-4 mb-md-3'>
       <Card.Body>
         <Card.Title>{e['Categorizza la tua idea in una frase']}</Card.Title>
         <Card.Subtitle>
