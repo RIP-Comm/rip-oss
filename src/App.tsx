@@ -11,7 +11,7 @@ import { Button } from 'react-bootstrap';
 const App = () => {
 
   const [lightMode, setLightMode] = React.useState(true);
-  const [data, setData] = useState<SheetCols[]>([] as SheetCols[]);
+  const [mock_data, setData] = useState<SheetCols[]>([] as SheetCols[]);
 
   if (process.env.NODE_ENV == 'development') {
 
